@@ -1,0 +1,371 @@
+// PC设备
+.top_nav {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #ccc;
+    line-height: 60px;
+    li {
+        float: left;
+        border-right: 1px solid #ccc;
+        padding: 0 30px;
+    }
+    li:last-child {
+        border-right: 0 none;
+        a {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: red;
+            color: #fff;
+            line-height: 1;
+            border-radius: 5px;
+        }
+        a:last-child {
+            background-color: transparent;
+            color: #888;
+            margin-left: 20px;
+        }
+        a:last-child:hover {
+            color: orange;
+        }
+    }
+}
+
+.m_nav {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #ccc;
+    line-height: 60px;
+
+    li {
+        float: left;
+        margin-right: 38px;
+    }
+
+    img {
+         width: 145px;
+    }
+}
+
+.banner {
+    width: 100%;
+    img {
+        width: 100%;
+    }
+}
+
+// 列表区域
+.lists {
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+
+    .w {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    dt {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+    dd {
+        margin-bottom: 10px;
+    }
+}
+
+.news {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    padding: 15px 0;
+    line-height: 26px;
+
+    a {
+        color: blue;
+
+        cursor: help;
+    }
+}
+
+// 底部区域
+.footer {
+    width: 100%;
+    // height: 500px;
+    background: url('../img/box-style-bg.png');
+    // 第一个盒子
+    .top_list {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        border-bottom: 1px solid #ccc;
+        li {
+            float: left;
+            a {
+                height: 50px;
+                display: block;
+                padding: 0 20px;
+            }
+            a:hover {
+                border-bottom: 1px solid red;
+            }
+        }
+    }
+    //第二个盒子
+    .tips {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        background-color: #fff;
+        padding-left: 30px;
+        box-sizing: border-box;
+        margin: 20px 0;
+        position: relative;
+    }
+    .tips::before {
+        content: '';
+        width: 0;
+        height: 0;
+        display: block;
+        border-bottom: 10px solid #fff;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid transparent;
+        position: absolute;
+        left: 30px;
+        top: -20px;
+    }
+
+    // 第三个盒子
+    .cards {
+        width: 100%;
+
+        display: flex;
+
+        // 让元素换行显示
+        flex-wrap: wrap;
+
+        justify-content: space-between;
+
+        .item {
+            height: 150px;
+            width: 33%;
+            background-color: #e61e25;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            display: flex;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .left_item {
+            flex: 1;
+            height: 100%;
+            position: relative;
+        }
+
+        .left_item::before {
+             content: '';
+             height: 16px;
+             width: 16px;
+             display: block;
+             background-color: #f0f0f0;
+             border-radius: 50%;
+             position: absolute;
+             right: -8px;
+             top: -18px;
+        }
+
+        .left_item::after {
+            content: '';
+            height: 16px;
+            width: 16px;
+            display: block;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            position: absolute;
+            right: -8px;
+            bottom: -18px;
+        }
+
+
+        .right_item {
+            width: 110px;
+            height: 100%;
+            border-left: 1px dashed #ccc;
+        }
+    }
+
+    .cards::after {
+         content: '';
+         width: 33%;
+         height: 0;
+         display: block;
+    }
+}
+
+
+//隐藏顶部导航
+.hidden_nav {
+    width: 100%;
+    height: 55px;
+    line-height: 55px;
+    background-color: #f8f8f8;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: none;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    z-index: 5;
+    a {
+        float: left;
+    }
+
+    a:last-child {
+        float: right;
+    }
+}
+
+
+//遮罩盒子
+.cover {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 6;
+    background-color: rgba(0,0,0,.5);
+    transform: translateX(-100%);
+
+    a {
+        width: 30px;
+        height: 30px;
+        display: block;
+        border: 1px solid #fff;
+        text-align: center;
+        line-height: 30px;
+        color: #fff;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+
+
+.cover:target {
+    transform: translateX(0);
+    transition: all 0.5s linear;
+}
+
+
+
+// 中等设备
+@media only screen and (max-width: 1024px) {
+
+    // 顶部导航
+    .top_nav {
+
+         .w {
+             width: 768px;
+         }
+
+         li:nth-child(1) {
+             display: none;
+         }
+    }
+
+    .m_nav {
+        .w {
+            width: 768px;
+        }
+        li {
+            margin-right: 32px;
+        }
+        li:last-child {
+            display: none;
+        }
+    }
+
+    .lists {
+        .w {
+            width: 768px;
+        }
+    }
+
+    .news {
+        .w {
+            width: 768px;
+        }
+    }
+
+    .footer {
+        .w {
+            width: 768px;
+        }
+
+        .cards {
+            .item {
+                width: 49%;
+            }
+        }
+
+    }
+}
+
+
+// 移动设备
+@media only screen and (max-width: 768px) {
+    
+    // 隐藏导航
+    .hidden_nav {
+        display: block;
+    }
+    
+    //顶部导航
+    .top_nav {
+        display: none;
+    }
+
+    // 主体导航区域
+    .m_nav {
+        display: none;
+    }
+
+    // 列表区域
+    .lists {
+        display: none;
+    }
+
+    // 新闻区域
+    .news {
+        .w {
+            width: 100%;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+    }
+
+    // 底部区域
+    .footer {
+        .w {
+            width: 100%;
+            .top_list {
+                // 目的： 让当前元素出现滚动条
+                overflow: auto;
+            }
+
+            // 目的： 为了保证所有的li在一行显示
+            ul {
+                width: 600px;
+            }
+        }
+
+        .cards {
+            .item {
+                width: 100%;
+            }
+        }
+    }
+}
